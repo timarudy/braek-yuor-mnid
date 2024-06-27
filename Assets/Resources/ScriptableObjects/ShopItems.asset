@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05ad82d333b4be585e9b5c8a69fb57b, type: 3}
+  m_Name: ShopItems
+  m_EditorClassIdentifier: 
+  ShopItemsData:
+  - Name: Hat
+    Price: 10
+    ShopItemImage: {fileID: 21300000, guid: 8f6fbbc1141e97f42a46adf966a298da, type: 3}
+    IsCollectable: 0
+    AccessoryType: 0
+  - Name: Animal_Cat
+    Price: 25
+    ShopItemImage: {fileID: 21300000, guid: fe1aaac1505893a44922e2e5aa5a71c5, type: 3}
+    IsCollectable: 0
+    AccessoryType: 2
+  - Name: Animal_Pig
+    Price: 0
+    ShopItemImage: {fileID: 21300000, guid: d102baea711fd194991f8bace24762a9, type: 3}
+    IsCollectable: 1
+    AccessoryType: 2
+  - Name: Animal_Chicken
+    Price: 0
+    ShopItemImage: {fileID: 21300000, guid: 5bc72d551ff9f5845b2e3621d197979c, type: 3}
+    IsCollectable: 1
+    AccessoryType: 2
+  - Name: Animal_Elephant
+    Price: 0
+    ShopItemImage: {fileID: 21300000, guid: 674152c095a315d4f839beaa03af651e, type: 3}
+    IsCollectable: 1
+    AccessoryType: 2
+  - Name: Animal_Lama
+    Price: 0
+    ShopItemImage: {fileID: 21300000, guid: fa28bdb87dbcd5349a1e5fd4db35b1a2, type: 3}
+    IsCollectable: 1
+    AccessoryType: 2
+  - Name: Skin_Blue
+    Price: 15
+    ShopItemImage: {fileID: 21300000, guid: 0aa285bde42826f45b803af9994d4d7c, type: 3}
+    IsCollectable: 0
+    AccessoryType: 1
+  - Name: Skin_Dirt
+    Price: 0
+    ShopItemImage: {fileID: 21300000, guid: 68eba46c74b6077488c4038264a87cbe, type: 3}
+    IsCollectable: 1
+    AccessoryType: 1

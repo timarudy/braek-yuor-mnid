@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51b360b4ff24f84b7696cd7f88f91fa, type: 3}
+  m_Name: GuessImagesData
+  m_EditorClassIdentifier: 
+  GuessImages:
+  - Sprite: {fileID: 21300000, guid: 1d1b71f34d1604845a3c41f0ac5b68b3, type: 3}
+    Name: 150
+  - Sprite: {fileID: 21300000, guid: a62e23c7c1b40fa4db77334e596d02ea, type: 3}
+    Name: 3
+  - Sprite: {fileID: 21300000, guid: 68785d958ca16754c83fd7f7168d46dd, type: 3}
+    Name: B
+  - Sprite: {fileID: 21300000, guid: cc259201c93c68c4798141ad50cc2ec8, type: 3}
+    Name: 24/08/1991

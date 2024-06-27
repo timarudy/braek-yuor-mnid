@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41473e955eb48e79df6d3a475348901, type: 3}
+  m_Name: SL_Notepad
+  m_EditorClassIdentifier: 
+  NotepadData:
+  - PageType: 0
+    Text: Your job is basically easy. You just have to craft the axe and cut down
+      the tree in the middle to save the pig. How to craft the axe? Hm... It will
+      be too easy, just try to think logically as in a real life.
+    PageNumber: 1
+  - PageType: 1
+    Text: Good luck, man! /woman as we are not sexists (we definitely are)
+    PageNumber: 2

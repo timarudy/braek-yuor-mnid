@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c8706b17240c1aa7f4042b0fc1aa0, type: 3}
+  m_Name: Sounds
+  m_EditorClassIdentifier: 
+  StoneDoorOpenSound:
+  - {fileID: 8300000, guid: 22d5f15dd80a9d4428949707c0dd65dc, type: 3}
+  FailSound:
+  - {fileID: 8300000, guid: 10d266e47ed19d94d9d500a94a0329d9, type: 3}

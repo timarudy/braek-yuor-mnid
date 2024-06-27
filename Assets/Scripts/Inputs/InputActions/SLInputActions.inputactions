@@ -1,0 +1,62 @@
+{
+    "name": "SLInputActions",
+    "maps": [
+        {
+            "name": "WateringCan",
+            "id": "0d778908-79fd-4804-bc84-06f8afaeb982",
+            "actions": [
+                {
+                    "name": "Water",
+                    "type": "Button",
+                    "id": "d779b68b-fd68-457b-8732-175ace95f4f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "524cc57d-c9d5-4e74-a687-b3d2ab7bcb42",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Water",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "CraftTable",
+            "id": "5b6b2576-1e0b-4971-9aed-dfee7c644e10",
+            "actions": [
+                {
+                    "name": "MakeAxe",
+                    "type": "Button",
+                    "id": "cab9c5ab-7d2e-48c3-ae1a-7b696952e0bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e5db3edb-2262-401a-9a31-86a7a2ec7c7e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MakeAxe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

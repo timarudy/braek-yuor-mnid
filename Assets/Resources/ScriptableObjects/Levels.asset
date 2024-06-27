@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef83daeb97a7497facad92277ffdab97, type: 3}
+  m_Name: Levels
+  m_EditorClassIdentifier: 
+  LevelsData:
+  - LevelName: FirstLevelScene
+    LevelCode: xkK12
+    Id: 1
+    IsOpenedLevel: 1
+    NotepadData: {fileID: 11400000, guid: 67baa20efb783074bbcde2407c4e6241, type: 2}
+  - LevelName: SecondLevelScene
+    LevelCode: opss1
+    Id: 2
+    IsOpenedLevel: 1
+    NotepadData: {fileID: 11400000, guid: 08dcd976ab508cd4794e450052d399b8, type: 2}
+  - LevelName: ThirdLevelScene
+    LevelCode: 1502L
+    Id: 3
+    IsOpenedLevel: 1
+    NotepadData: {fileID: 11400000, guid: 7acd3b49dffb6f34c85ef8dfbf65f598, type: 2}

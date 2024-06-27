@@ -1,0 +1,110 @@
+{
+    "name": "UIInputActions",
+    "maps": [
+        {
+            "name": "Notepad",
+            "id": "eb2bcf60-24b8-49bb-8f5c-71d859662233",
+            "actions": [
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "81d22280-d905-4ee4-a69c-d5bfe15d392c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "41027fa0-363a-4a06-87aa-a4c0d44e5565",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "WorldSpaceInput",
+            "id": "47bd4b76-aab7-4bb1-96a4-b50cfd005a8c",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "0f555260-1361-40f9-a45b-85510c25c6c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "194fff0f-e08d-4a1e-8270-3354ca3db035",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "14aa2d35-c356-472d-a113-a21f0a832e99",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7eb75601-02c6-4b10-91d2-28899634bdbe",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Windows",
+            "id": "b352b448-9055-40f5-a3aa-b2c5848471aa",
+            "actions": [
+                {
+                    "name": "Settings",
+                    "type": "Button",
+                    "id": "7b6a25e4-4340-484d-a4fe-50d5da2d40bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c44ebc11-71ed-42b3-89cc-0b5758b99249",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
