@@ -98,7 +98,6 @@ namespace Inputs.Services
         public void CloseSettings()
         {
             OnSettingsClose?.Invoke();
-            // EnableNotepad();
             EnableWorldInput();
         }
 

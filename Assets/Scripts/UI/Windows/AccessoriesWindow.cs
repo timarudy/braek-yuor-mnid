@@ -88,8 +88,7 @@ namespace UI.Windows
 
         protected override void CloseSelf()
         {
-            WindowService.CloseCurrentWindow();
-            UIInput.IsWindowOpened = false;
+            base.CloseSelf();
             WindowService.Open(WindowType.SETTINGS);
         }
 

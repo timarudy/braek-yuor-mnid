@@ -33,7 +33,7 @@ namespace Levels.Enemies
             _uiInputService.OnSettingsOpen += Stop;
             _uiInputService.OnSettingsClose += Go;
         }
-
+        
         private void OnDisable()
         {
             _uiInputService.OnSettingsOpen -= Stop;
@@ -73,12 +73,12 @@ namespace Levels.Enemies
         public void RemoveObservers() =>
             RemoveObserver(Following.GetComponentInParent<PlayerHealth>());
 
-        public void Stop() =>
+        public void Stop() => 
             _stop = true;
 
         public void Go()
         {
-            if (!_stop)
+            if (_stop)
             {
                 if (!Died)
                 {

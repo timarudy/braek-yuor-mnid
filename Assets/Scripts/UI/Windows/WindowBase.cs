@@ -21,25 +21,17 @@ namespace UI.Windows
             WindowService = windowService;
         }
 
-        private void Awake()
-        {
+        private void Awake() => 
             OnAwake();
-        }
 
-        private void OnEnable()
-        {
+        private void OnEnable() => 
             OnEnableAction();
-        }
 
-        private void OnDisable()
-        {
+        private void OnDisable() => 
             OnDisableAction();
-        }
 
-        protected virtual void OnAwake()
-        {
+        protected virtual void OnAwake() => 
             CloseButton.onClick.AddListener(CloseSelf);
-        }
 
         protected virtual void CloseSelf()
         {

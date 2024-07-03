@@ -1,4 +1,5 @@
-﻿using Infrastructure.AssetManagement;
+﻿using Extensions;
+using Infrastructure.AssetManagement;
 using InteractionManagement.Holdable;
 using Levels.Animals;
 using Levels.Coins;
@@ -36,7 +37,7 @@ namespace Services.Factory
                     null
                 );
 
-            MoveToActiveScene(component);
+            SceneExtensions.MoveToActiveScene(component);
 
             _diContainer.Bind<TComponent>().FromInstance(component).AsTransient();
 
@@ -53,7 +54,7 @@ namespace Services.Factory
                     null
                 );
 
-            MoveToActiveScene(component);
+            SceneExtensions.MoveToActiveScene(component);
 
             return component;
         }
@@ -69,7 +70,7 @@ namespace Services.Factory
                 );
 
             holdable.SetNativeTransform(nativeTransform);
-            MoveToActiveScene(holdable);
+            SceneExtensions.MoveToActiveScene(holdable);
 
             return holdable;
         }
@@ -85,7 +86,7 @@ namespace Services.Factory
                 );
 
             animal.Following = following.GetComponentInChildren<PlayerFollow>();
-            MoveToActiveScene(animal);
+            SceneExtensions.MoveToActiveScene(animal);
 
             return animal;
         }
@@ -101,50 +102,9 @@ namespace Services.Factory
                 );
 
             collectable.Fall();
-            MoveToActiveScene(collectable);
+            SceneExtensions.MoveToActiveScene(collectable);
 
             return collectable;
-        }
-
-        public EnemyAttack SpawnEnemy(EnemyType enemyType, Vector3 at, Transform parentTransform,
-            PlayerFollow following)
-        {
-            switch (enemyType)
-            {
-                case EnemyType.CHICKEN:
-                    return CreateEnemy(at, parentTransform, following, AssetPath.Enemy_ChickenPath);
-                case EnemyType.LAMA:
-                    return CreateEnemy(at, parentTransform, following, AssetPath.Enemy_LamaPath);
-                case EnemyType.ELEPHANT:
-                    return CreateEnemy(at, parentTransform, following, AssetPath.Enemy_ElephantPath);
-            }
-
-            return null;
-        }
-
-        private EnemyAttack CreateEnemy(Vector3 at, Transform parentTransform, PlayerFollow following, string path)
-        {
-            EnemyAttack enemy = _diContainer
-                .InstantiatePrefabForComponent<EnemyAttack>(
-                    prefab: _assetProvider.LoadResource<EnemyAttack>(path),
-                    position: at,
-                    Quaternion.identity,
-                    parentTransform
-                );
-
-            enemy.Following = following.transform;
-            enemy.AddObserver(following.GetComponentInParent<PlayerHealth>());
-            MoveToActiveScene(enemy);
-
-            return enemy;
-        }
-
-        private void MoveToActiveScene<TComponent>(TComponent component) where TComponent : Object
-        {
-            if (component is Component unityComponent && unityComponent.gameObject.scene.name == "DontDestroyOnLoad")
-            {
-                SceneManager.MoveGameObjectToScene(unityComponent.gameObject, SceneManager.GetActiveScene());
-            }
         }
     }
 }

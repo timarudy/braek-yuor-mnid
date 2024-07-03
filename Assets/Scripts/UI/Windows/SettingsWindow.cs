@@ -45,6 +45,12 @@ namespace UI.Windows
             _uiInputService.CloseSettings();
         }
 
+        protected override void CloseSelf()
+        {
+            base.CloseSelf();
+            UIInput.CloseSettings();
+        }
+
         private void ToGameSettings() => 
             WindowService.ReopenWindow(WindowType.GAME_SETTINGS);
 

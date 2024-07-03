@@ -16,14 +16,14 @@ namespace Levels.Enemies
         private const string EnemySpawnersTag = "EnemySpawner";
 
         private readonly List<EnemyAttack> _enemies = new();
-        private IGameFactory _gameFactory;
+        private IEnemiesFactory _enemiesFactory;
         private IPersistentProgressService _progressService;
         private bool _isSpawned;
 
         [Inject]
-        private void Construct(IGameFactory gameFactory, IPersistentProgressService progressService)
+        private void Construct(IEnemiesFactory enemiesFactory, IPersistentProgressService progressService)
         {
-            _gameFactory = gameFactory;
+            _enemiesFactory = enemiesFactory;
             _progressService = progressService;
         }
 
@@ -42,7 +42,7 @@ namespace Levels.Enemies
                     if (!_progressService.PlayerProgress.LevelProgressData.KillData.ClearedSpawners.Contains(
                             spawner.GetComponent<UniqueId>().Id))
                     {
-                        EnemyAttack enemy = _gameFactory.SpawnEnemy(
+                        EnemyAttack enemy = _enemiesFactory.SpawnEnemy(
                             spawner.GetComponent<EnemySpawner>().EnemyType,
                             spawner.transform.position,
                             null,
@@ -69,7 +69,7 @@ namespace Levels.Enemies
         private void OnTriggerExit(Collider other)
         {
             if (other.TryGetComponent(out IHoldable _) || other.TryGetComponent(out AnimalBase _)) return;
-            
+
             other.GetComponentInParent<PlayerAttack>().InAttackZone = false;
             if (_isSpawned)
             {
