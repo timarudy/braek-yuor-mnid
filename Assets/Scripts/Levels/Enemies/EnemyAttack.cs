@@ -1,7 +1,10 @@
-﻿using Observer;
+﻿using System;
+using Inputs.Services;
+using Observer;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 namespace Levels.Enemies
 {
@@ -18,12 +21,27 @@ namespace Levels.Enemies
         public Transform AttackTransform;
 
         private EnemyAttackAnimator _enemyAnimator;
+        private IUIInputService _uiInputService;
         private bool _stop;
 
-        private void Start()
+        [Inject]
+        private void Construct(IUIInputService uiInputService) => 
+            _uiInputService = uiInputService;
+
+        private void OnEnable()
         {
-            _enemyAnimator = GetComponent<EnemyAttackAnimator>();
+            _uiInputService.OnSettingsOpen += Stop;
+            _uiInputService.OnSettingsClose += Go;
         }
+
+        private void OnDisable()
+        {
+            _uiInputService.OnSettingsOpen -= Stop;
+            _uiInputService.OnSettingsClose -= Go;
+        }
+
+        private void Start() => 
+            _enemyAnimator = GetComponent<EnemyAttackAnimator>();
 
         private void Update()
         {
@@ -60,9 +78,12 @@ namespace Levels.Enemies
 
         public void Go()
         {
-            if (!Died)
+            if (!_stop)
             {
-                _stop = false;
+                if (!Died)
+                {
+                    _stop = false;
+                }
             }
         }
 

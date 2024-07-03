@@ -8,8 +8,8 @@ namespace Inputs.Services
         event Action CloseNotepadEvent;
         event Action EnableInteractableInput;
         event Action DisableInteractableInput;
-        event Action OnWindowOpen;
-        event Action OnWindowClose;
+        event Action OnSettingsOpen;
+        event Action OnSettingsClose;
         bool IsWindowOpened { get; set; }
         bool IsNotepadOpened { get; set; }
         void EnableWorldInput();

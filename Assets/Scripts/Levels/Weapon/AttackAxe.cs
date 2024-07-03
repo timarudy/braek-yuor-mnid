@@ -26,5 +26,11 @@ namespace Levels.Weapon
                     return;
             }
         }
+
+        public override void PlayTookSound(AudioSource audioSource) => 
+            SoundService.PlayStickSound(audioSource);
+
+        public override void PlayHitSound(AudioSource audioSource) =>
+            SoundService.PlayChopSound(audioSource);
     }
 }

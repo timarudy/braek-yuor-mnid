@@ -1,6 +1,7 @@
 using Player;
 using Services.Progress;
 using Services.Progress.SaveLoadService;
+using SoundManagement;
 using UnityEngine;
 using Zenject;
 
@@ -12,17 +13,20 @@ namespace Levels.Coins
 
         protected PlayerController Player;
         protected IPersistentProgressService ProgressService;
-        
+
         private bool _isCollecting;
         private float _collectingSpeed = 0.01f;
         private bool _isFalling;
         private ISaveLoadService _saveLoadService;
+        private ISoundService _soundService;
 
         [Inject]
-        private void Construct(PlayerController player, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+        private void Construct(PlayerController player, IPersistentProgressService progressService,
+            ISaveLoadService saveLoadService, ISoundService soundService)
         {
             Player = player;
             ProgressService = progressService;
+            _soundService = soundService;
             _saveLoadService = saveLoadService;
         }
 
@@ -43,12 +47,12 @@ namespace Levels.Coins
 
             if (_isFalling)
             {
-                Vector3 targetPosition = Vector3.Lerp(transform.position, new Vector3(transform.position.x, LevitatingAltitude, transform.position.z),
+                Vector3 targetPosition = Vector3.Lerp(transform.position,
+                    new Vector3(transform.position.x, LevitatingAltitude, transform.position.z),
                     2 * Time.deltaTime);
 
                 transform.position = targetPosition;
             }
-
         }
 
         private void OnTriggerEnter(Collider other)
@@ -64,14 +68,14 @@ namespace Levels.Coins
             _collectingSpeed = 0.001f;
         }
 
-        public void Fall() => 
+        public void Fall() =>
             _isFalling = true;
 
         protected virtual void Collect()
         {
             _saveLoadService.UpdatePlayerPrefs();
-
-            _isCollecting = false;
+            _soundService.PlayPickUpSound(Player.GetComponent<PlayerHealth>().AudioSource);
+                _isCollecting = false;
             DestroySelf();
         }
 

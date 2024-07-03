@@ -32,7 +32,7 @@ namespace UI.Service
             if (CurrentWindow != null)
             {
                 CloseCurrentWindowEvent?.Invoke();
-                if (CurrentWindow is SettingsWindow or AccessoriesWindow)
+                if (CurrentWindow is SettingsWindow or AccessoriesWindow or GameSettingsWindow)
                     _cursorService.LockCursor();
 
                 CurrentWindow = null;

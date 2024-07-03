@@ -16,3 +16,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 22d5f15dd80a9d4428949707c0dd65dc, type: 3}
   FailSound:
   - {fileID: 8300000, guid: 10d266e47ed19d94d9d500a94a0329d9, type: 3}
+  PickUpSound:
+  - {fileID: 8300000, guid: 6ef262f16b52d0343b66989d64a9e6c2, type: 3}
+  StoneSound:
+  - {fileID: 8300000, guid: 149b8ab0cfd93044b99a3d255b80e2bb, type: 3}
+  StickSound:
+  - {fileID: 8300000, guid: 13636e725784e95408195bd74dd77649, type: 3}
+  GrassSound:
+  - {fileID: 8300000, guid: 6f8e5f24a46960c4580c0099520d1820, type: 3}
+  WateringCanSound:
+  - {fileID: 8300000, guid: 6ef262f16b52d0343b66989d64a9e6c2, type: 3}
+  ChopSound:
+  - {fileID: 8300000, guid: e37ed804020ae6848acb87659a59d921, type: 3}
+  SwordSound:
+  - {fileID: 8300000, guid: 6ef262f16b52d0343b66989d64a9e6c2, type: 3}

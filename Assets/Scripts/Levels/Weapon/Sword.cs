@@ -11,5 +11,11 @@ namespace Levels.Weapon
             transform.localPosition = new Vector3(0.0505000018f,0.0839999989f,-0.0155999996f);
             transform.localRotation = Quaternion.Euler(0.909190416f,7.72223091f,79.1233292f);
         }
+
+        public override void PlayTookSound(AudioSource audioSource) => 
+            SoundService.PlayStickSound(audioSource);
+
+        public override void PlayHitSound(AudioSource audioSource) => 
+            SoundService.PlaySwordSound(audioSource);
     }
 }

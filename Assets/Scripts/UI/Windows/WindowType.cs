@@ -7,7 +7,7 @@
         LEVELS_LIST,
         INFO,
         ACCESSORIES,
-        ANIMALS,
+        GAME_SETTINGS,
         KILLED,
     }
 }

@@ -35,14 +35,14 @@ namespace Player.Input
 
         private void OnEnable()
         {
-            _uiInputService.OnWindowOpen += DisableInput;
-            _uiInputService.OnWindowClose += EnableInput;
+            _uiInputService.OnSettingsOpen += DisableInput;
+            _uiInputService.OnSettingsClose += EnableInput;
         }
 
         private void OnDisable()
         {
-            _uiInputService.OnWindowOpen -= DisableInput;
-            _uiInputService.OnWindowClose -= EnableInput;
+            _uiInputService.OnSettingsOpen -= DisableInput;
+            _uiInputService.OnSettingsClose -= EnableInput;
         }
 
         private void Start()

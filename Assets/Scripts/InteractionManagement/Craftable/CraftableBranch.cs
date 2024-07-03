@@ -24,5 +24,8 @@ namespace InteractionManagement.Craftable
                     return;
             }
         }
+
+        public override void PlayTookSound(AudioSource audioSource) => 
+            SoundService.PlayStickSound(audioSource);
     }
 }

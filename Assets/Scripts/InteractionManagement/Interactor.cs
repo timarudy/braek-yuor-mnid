@@ -35,15 +35,15 @@ namespace InteractionManagement
         private void OnEnable()
         {
             _uiInput.EnableInteractableInput += TryInteraction;
-            _uiInput.OnWindowClose += TryEnableNotepad;
-            _uiInput.OnWindowClose += TryEnableAttackable;
+            _uiInput.OnSettingsClose += TryEnableNotepad;
+            _uiInput.OnSettingsClose += TryEnableAttackable;
         }
 
         private void OnDisable()
         {
             _uiInput.EnableInteractableInput -= TryInteraction;
-            _uiInput.OnWindowClose -= TryEnableNotepad;
-            _uiInput.OnWindowClose -= TryEnableAttackable;
+            _uiInput.OnSettingsClose -= TryEnableNotepad;
+            _uiInput.OnSettingsClose -= TryEnableAttackable;
         }
 
         private void Update()

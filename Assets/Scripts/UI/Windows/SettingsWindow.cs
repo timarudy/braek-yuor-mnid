@@ -13,7 +13,7 @@ namespace UI.Windows
     {
         [SerializeField] private Button MainMenuButton;
         [SerializeField] private Button AccessoriesWindowButton;
-        // [SerializeField] private Button AnimalsWindowButton;
+        [SerializeField] private Button GameSettingsWindowButton;
 
         private IGameStateMachine _stateMachine;
         private IUIInputService _uiInputService;
@@ -30,7 +30,7 @@ namespace UI.Windows
             base.OnAwake();
             MainMenuButton.onClick.AddListener(ToMainMenu);
             AccessoriesWindowButton.onClick.AddListener(ToAccessories);
-            // AnimalsWindowButton.onClick.AddListener(ToAnimals);
+            GameSettingsWindowButton.onClick.AddListener(ToGameSettings);
         }
 
         protected override void OnEnableAction()
@@ -45,11 +45,11 @@ namespace UI.Windows
             _uiInputService.CloseSettings();
         }
 
+        private void ToGameSettings() => 
+            WindowService.ReopenWindow(WindowType.GAME_SETTINGS);
+
         private void ToAccessories() => 
             WindowService.ReopenWindow(WindowType.ACCESSORIES);
-        
-        // private void ToAnimals() => 
-        //     WindowService.ReopenWindow(WindowType.ANIMALS);
 
         private void ToMainMenu()
         {

@@ -8,5 +8,6 @@ namespace InteractionManagement.Holdable
         Rigidbody Rigidbody { get; }
         Transform NativeTransformComponent { get; }
         void SetHoldableObjectParent(Transform nativeTransform);
+        void PlayTookSound(AudioSource audioSource);
     }
 }

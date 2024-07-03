@@ -12,7 +12,7 @@ namespace SoundManagement
         private void Awake()
         {
             _musicManager = MusicManager.Instance;
-            VolumeSliderComponent.value = 1f;
+            VolumeSliderComponent.value = _musicManager.AudioSource.volume / 0.07f;
         }
 
         public void ChangeVolume() => 

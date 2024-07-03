@@ -18,8 +18,9 @@ namespace Player
 {
     public class PlayerHealth : MonoBehaviour, IObserver
     {
+        public AudioSource AudioSource;
+        
         [SerializeField] private int MaxHp = 10;
-        [SerializeField] private AudioSource AudioSource;
         [SerializeField] private Transform CameraDestination;
 
         private ISoundService _soundService;
@@ -115,45 +116,15 @@ namespace Player
 
 
             _windowService.Open(WindowType.KILLED);
-
-            // StartCoroutine(OpenKilledWindow());
         }
-
-        // private IEnumerator OpenKilledWindow()
-        // {
-        //     _windowService.Open(WindowType.KILLED);
-        //
-        //     CanvasGroup killedWindow = _windowService.CurrentWindow.GetComponent<CanvasGroup>();
-        //     killedWindow.alpha = 1;
-        //     killedWindow.interactable = false;
-        //
-        //     // Debug statement to confirm the initial state
-        //     Debug.Log("Initial alpha: " + killedWindow.alpha);
-        //
-        //     while (killedWindow.alpha > 0)
-        //     {
-        //         killedWindow.alpha -= 0.001f;
-        //
-        //         // Debug statement to trace alpha changes
-        //         Debug.Log("Current alpha: " + killedWindow.alpha);
-        //
-        //         yield return null;
-        //     }
-        //
-        //     // Final state confirmation
-        //     Debug.Log("Final alpha: " + killedWindow.alpha);
-        //     killedWindow.interactable = true;
-        // }
-
+        
         private void SetHpBar(HpBar hpBar)
         {
             _hpBar = hpBar;
             _uiFactory.OnHpBarCreated -= SetHpBar;
         }
 
-        private void ChangeCameraFollow(GameObject cameraFollow)
-        {
+        private void ChangeCameraFollow(GameObject cameraFollow) => 
             _currentCameraFollow = cameraFollow;
-        }
     }
 }

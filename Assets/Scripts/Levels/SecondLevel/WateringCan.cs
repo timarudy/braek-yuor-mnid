@@ -62,6 +62,9 @@ namespace Levels.SecondLevel
         protected override void UnregisterInputableHoldingObject() =>
             _slInputService.DisableWateringCan();
 
+        public override void PlayTookSound(AudioSource audioSource) => 
+            SoundService.PlayWateringCanSound(audioSource);
+
         private void StartWateringGrass() =>
             WaterGrass(true);
 

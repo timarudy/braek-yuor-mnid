@@ -5,7 +5,7 @@ using Zenject;
 
 namespace InteractionManagement.Attackable
 {
-    public class AttackBase : HoldableBase, IInputableObject
+    public abstract class AttackBase : HoldableBase, IInputableObject
     {
         public LayerMask AttackLayer;
 
@@ -22,5 +22,8 @@ namespace InteractionManagement.Attackable
 
         protected override void UnregisterInputableHoldingObject() =>
             _inputService.DisableAttackable();
+
+        public abstract override void PlayTookSound(AudioSource audioSource);
+        public abstract void PlayHitSound(AudioSource audioSource);
     }
 }

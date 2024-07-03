@@ -34,7 +34,6 @@ namespace UI.Factory
 
         public WindowBase CreateWindow(WindowType windowType)
         {
-            Debug.Log("Create");
             WindowBase window = _staticData.ForWindow(windowType);
             _diContainer.InstantiatePrefab(window, _uiRoot);
 

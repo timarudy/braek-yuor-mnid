@@ -15,8 +15,8 @@ namespace Inputs.Services
         public event Action CloseNotepadEvent;
         public event Action EnableInteractableInput;
         public event Action DisableInteractableInput;
-        public event Action OnWindowOpen;
-        public event Action OnWindowClose;
+        public event Action OnSettingsOpen;
+        public event Action OnSettingsClose;
 
         public bool IsWindowOpened { get; set; }
         public bool IsNotepadOpened { get; set; }
@@ -97,14 +97,14 @@ namespace Inputs.Services
 
         public void CloseSettings()
         {
-            OnWindowClose?.Invoke();
+            OnSettingsClose?.Invoke();
             // EnableNotepad();
             EnableWorldInput();
         }
 
         public void OpenSettings()
         {
-            OnWindowOpen?.Invoke();
+            OnSettingsOpen?.Invoke();
             _inputService.DisableAttackable();
             DisableNotepad();
             DisableWorldInput();

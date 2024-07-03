@@ -15,7 +15,10 @@ namespace SoundManagement
         private void Awake() => 
             DontDestroyOnLoad(gameObject);
 
-        private void Start() => 
+        private void Start()
+        {
             Instance = this;
+            AudioSource.volume = 0.07f;
+        }
     }
 }

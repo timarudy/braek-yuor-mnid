@@ -78,6 +78,9 @@ namespace Levels.SecondLevel
             }
         }
 
+        public override void PlayTookSound(AudioSource audioSource) => 
+            SoundService.PlayGrassSound(audioSource);
+
         public void StartGrowing()
         {
             IsTimerSet = true;

@@ -19,9 +19,33 @@ namespace SoundManagement
         public void PlayStoneOpeningSound(Vector3 at) =>
             PlaySound(_sounds.StoneDoorOpenSound, at);
 
-        public void PlayFailSound(AudioSource audioSource)
+        public void PlayFailSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.FailSound);
+        
+        public void PlayStoneSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.StoneSound);
+        
+        public void PlayStickSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.StickSound);
+        
+        public void PlayGrassSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.GrassSound);
+
+        public void PlayWateringCanSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.WateringCanSound);
+
+        public void PlayChopSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.ChopSound);
+
+        public void PlaySwordSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.SwordSound);
+
+        public void PlayPickUpSound(AudioSource audioSource) => 
+            PlayRandomSound(audioSource, _sounds.PickUpSound);
+
+        private static void PlayRandomSound(AudioSource audioSource, List<AudioClip> sounds)
         {
-            audioSource.clip = GetRandomAudioClip(_sounds.FailSound);
+            audioSource.clip = GetRandomAudioClip(sounds);
             audioSource.Play();
         }
 

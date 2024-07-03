@@ -1,5 +1,6 @@
 ﻿using Inputs.Services;
 using Player;
+using SoundManagement;
 using UI.Factory;
 using UI.PopUps;
 using UnityEngine;
@@ -7,7 +8,7 @@ using Zenject;
 
 namespace InteractionManagement.Holdable
 {
-    public class HoldableBase : MonoBehaviour, IHoldable
+    public abstract class HoldableBase : MonoBehaviour, IHoldable
     {
         [SerializeField] private Transform HoldableObjectsParentTransform;
 
@@ -15,13 +16,18 @@ namespace InteractionManagement.Holdable
         public Rigidbody Rigidbody { get; private set; }
         public Transform NativeTransformComponent { get; private set; }
         
+        protected ISoundService SoundService;
+        
         private IHoldableParent _holdableParent;
         private ToolTipVisibilityHandler _toolTipHandler;
         private IUIInputService _uiInputService;
 
         [Inject]
-        private void Construct(IUIInputService uiInputService) => 
+        private void Construct(IUIInputService uiInputService, ISoundService soundService)
+        {
+            SoundService = soundService;
             _uiInputService = uiInputService;
+        }
 
         private void Start() => 
             OnStart();
@@ -53,6 +59,8 @@ namespace InteractionManagement.Holdable
             {
                 if (this is IInputableObject)
                     RegisterInputableHoldingObject();
+
+                PlayTookSound(interactor.GetComponent<PlayerHealth>().AudioSource);
                 
                 Rigidbody.isKinematic = true;
                 interactorAnimator.Hold();
@@ -71,6 +79,8 @@ namespace InteractionManagement.Holdable
                     if (holdableObj != null) 
                         holdableObj.UnregisterInputableHoldingObject();
                 }
+
+                interactor.GetHoldableObject().PlayTookSound(interactor.GetComponent<PlayerHealth>().AudioSource);
                 
                 interactor.GetHoldableObject().Rigidbody.isKinematic = false;
                 interactorAnimator.Unhold();
@@ -80,6 +90,7 @@ namespace InteractionManagement.Holdable
                 _uiInputService.EnableNotepad();
             }
         }
+
 
         public virtual void OpenTooltip(Interactor interactor)
         {
@@ -112,5 +123,7 @@ namespace InteractionManagement.Holdable
         protected virtual void UnregisterInputableHoldingObject()
         {
         }
+
+        public abstract void PlayTookSound(AudioSource audioSource);
     }
 }

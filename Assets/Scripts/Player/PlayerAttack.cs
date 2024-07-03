@@ -85,10 +85,13 @@ namespace Player
                     _playerMovement.StopAttacking();
                     _playerMovement.UnfollowHead();
                 }
-
-                if (IsHit(out IAttackable hit))
+                
+                AttackBase attack = GetComponent<Interactor>().GetHoldableObject() as AttackBase;
+                
+                if (IsHit(out IAttackable hit, attack))
                 {
                     bool isHit = hit.GetHit();
+                    attack.PlayHitSound(GetComponent<PlayerHealth>().AudioSource);
 
                     if (isHit)
                     {
@@ -100,9 +103,8 @@ namespace Player
             }
         }
 
-        private bool IsHit(out IAttackable hit)
+        private bool IsHit(out IAttackable hit, AttackBase attack)
         {
-            AttackBase attack = GetComponent<Interactor>().GetHoldableObject() as AttackBase;
             int hitCount = 0;
             if (attack != null)
             {
